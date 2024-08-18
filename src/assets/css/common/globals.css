@@ -22,8 +22,8 @@ body {
   line-height: 1.5em;
 }
 
-/*@layer utilities {*/
-/*  .text-balance {*/
-/*    text-wrap: balance;*/
-/*  }*/
-/*}*/
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

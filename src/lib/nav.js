@@ -1,47 +1,21 @@
-// 导航列表
-export const navList = [
-    {
-        title: '首页',
-        href: '/'
-    },
-    {
-        title: '归档',
-        href: '/articles'
-    },
-    {
-        title: '关于',
-        href: '/about'
-    }
-]
-
-/**
- * 获取当前激活导航索引
- * @param pathName 当前路径
- * @returns {number}
- */
-export function getNavActiveIndex(pathName) {
-    let activeIndex = 0
-    if(pathName !== '/') {
-        activeIndex = navList.slice(1).findIndex(nav => pathName.indexOf(nav.href) > -1) + 1
-    }
-
-    return activeIndex
+export const NAV_ENUM = {
+    HOME_PAGE: 'HOME_PAGE', // 首页
+    ARTICLES_PAGE: 'ARTICLES_PAGE', // 文章
+    CATEGORY_PAGE: 'CATEGORY_PAGE', // 分类
+    ABOUT_PAGE: 'ABOUT_PAGE', // 关于
 }
 
 /**
  * 获取导航样式
  *
- * @param index 导航索引
- * @param activeIndex 当前激活导航索引
+ * @param currentNav 导航索引
+ * @param activeNav 当前激活导航索引
  * @returns {string}
  */
-export function getNavClass(index, activeIndex) {
+export function getNavClass(currentNav, activeNav) {
     let classNames = 'nav-links px-4 hover:text-primary hover:font-bold'
-    if(index === activeIndex) {
-        classNames += ' font-bold text-primary'
-    }
-    if(index === navList.length - 1) {
-        classNames += ' pr-0'
+    if(currentNav === activeNav) {
+        classNames += ' font-medium text-primary'
     }
 
     return classNames
