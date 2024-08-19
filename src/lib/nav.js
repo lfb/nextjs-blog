@@ -2,7 +2,7 @@ export const NAV_ENUM = {
     HOME_PAGE: 'HOME_PAGE', // 首页
     ARTICLES_PAGE: 'ARTICLES_PAGE', // 文章
     CATEGORY_PAGE: 'CATEGORY_PAGE', // 分类
-    ABOUT_PAGE: 'ABOUT_PAGE', // 关于
+    ABOUT_PAGE: 'ABOUT_PAGE' // 关于
 }
 
 /**
@@ -14,7 +14,7 @@ export const NAV_ENUM = {
  */
 export function getNavClass(currentNav, activeNav) {
     let classNames = 'nav-links px-4 hover:text-primary hover:font-bold'
-    if(currentNav === activeNav) {
+    if (currentNav === activeNav) {
         classNames += ' font-medium text-primary'
     }
 

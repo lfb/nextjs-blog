@@ -1,15 +1,14 @@
-
 .logo {
-  position: relative;
-  width: 188px;
-  height: 28px;
-  overflow: hidden;
+    position: relative;
+    width: 188px;
+    height: 28px;
+    overflow: hidden;
 }
 
 .logo-image {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  transform: translateY(-50%);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
 }

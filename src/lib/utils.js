@@ -32,7 +32,7 @@ const isArray = arr => {
  *
  * @returns 月-日
  */
-const getMonthDate = (dateStr) => {
+const getMonthDate = dateStr => {
     // 转换为年月日，2023-02-10
     const d = new Date(dateStr)
 
@@ -45,8 +45,4 @@ const getMonthDate = (dateStr) => {
     return `${month}-${date}`
 }
 
-export {
-    isArray,
-    isObject,
-    getMonthDate
-}
+export { isArray, isObject, getMonthDate }

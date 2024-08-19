@@ -1,57 +1,55 @@
 .article-details-content p {
-  line-height: 2em;
-  @apply my-4 text-base;
+    line-height: 2em;
+    @apply my-4 text-base;
 }
 
 .article-details-content a {
-
-  @apply underline underline-offset-4 cursor-pointer hover:text-primary;
+    @apply underline underline-offset-4 cursor-pointer hover:text-primary;
 }
 
 .article-details-content b,
-.article-details-content strong{
-  @apply font-medium;
+.article-details-content strong {
+    @apply font-medium;
 }
 
-.article-details-content ol, ul, menu {
-  @apply pl-8;
+.article-details-content ol,
+ul,
+menu {
+    @apply pl-8;
 }
 .article-details-content li {
-  list-style: disc;
-  @apply my-2;
+    list-style: disc;
+    @apply my-2;
 }
-.article-details-content h1 ,
+.article-details-content h1,
 .article-details-content h2,
 .article-details-content h3,
 .article-details-content h4,
 .article-details-content h5,
-.article-details-content h6{
-  @apply my-6 font-medium;
+.article-details-content h6 {
+    @apply my-6 font-medium;
 }
 
 .article-details-content h1 {
-  @apply text-3xl;
+    @apply text-3xl;
 }
 
 .article-details-content h2 {
-  @apply text-2xl;
+    @apply text-2xl;
 }
-
 
 .article-details-content h3 {
-  @apply text-xl;
+    @apply text-xl;
 }
-
 
 .article-details-content h4 {
-  @apply text-lg;
+    @apply text-lg;
 }
 
-
 .article-details-content h5 {
-  @apply text-base;
+    @apply text-base;
 }
 
 .article-details-content h6 {
-  @apply text-base;
+    @apply text-base;
 }

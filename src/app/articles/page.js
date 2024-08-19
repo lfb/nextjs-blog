@@ -1,8 +1,8 @@
-import ArticleShelf from '@/components/Articles/ArticleShelf';
-import {getArticlesList} from '@/requests/api/articles';
-import {isObject} from '@/lib/utils';
-import BaseLayout from '@/components/Common/BaseLayout';
-import {NAV_ENUM} from '@/lib/nav';
+import ArticleShelf from '@/components/Articles/ArticleShelf'
+import { getArticlesList } from '@/requests/api/articles'
+import { isObject } from '@/lib/utils'
+import BaseLayout from '@/components/Common/BaseLayout'
+import { NAV_ENUM } from '@/lib/nav'
 
 export default async function Articles() {
     let articleList = []
@@ -12,7 +12,7 @@ export default async function Articles() {
         }
     })
 
-    if(!err && isObject(res) && isObject(res.data)) {
+    if (!err && isObject(res) && isObject(res.data)) {
         articleList = res.data
     }
 

@@ -1,16 +1,16 @@
-import { ArticleJsonLd } from 'next-seo';
+import { ArticleJsonLd } from 'next-seo'
 
-import {getArticleDetails} from '@/requests/api/articles'
-import {isObject} from '@/lib/utils';
+import { getArticleDetails } from '@/requests/api/articles'
+import { isObject } from '@/lib/utils'
 
 import '@/assets/css/common/highlight.css'
 import '@/assets/css/articles/articles.css'
-import ArticleCopyright from '@/components/Articles/ArticleCopyright';
-import BaseLayout from '@/components/Common/BaseLayout';
-import {NAV_ENUM} from '@/lib/nav';
+import ArticleCopyright from '@/components/Articles/ArticleCopyright'
+import BaseLayout from '@/components/Common/BaseLayout'
+import { NAV_ENUM } from '@/lib/nav'
 
 export async function generateMetadata({ params, searchParams }, parent) {
-    const {id, path} = params || {}
+    const { id, path } = params || {}
 
     let article = {}
     let [err, res] = await getArticleDetails({
@@ -21,7 +21,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
         }
     })
 
-    if(!err && isObject(res)) {
+    if (!err && isObject(res)) {
         article = res.data
     }
 
@@ -36,7 +36,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 export default async function ArticlesDetails({ params, query, searchParams }) {
-    const {id, path} = params || {}
+    const { id, path } = params || {}
 
     let article = {}
     let [err, res] = await getArticleDetails({
@@ -46,30 +46,28 @@ export default async function ArticlesDetails({ params, query, searchParams }) {
         }
     })
 
-    if(!err && isObject(res)) {
+    if (!err && isObject(res)) {
         article = res.data
     }
 
     return (
         <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
             <div className="article-details overflow-hidden mb-8">
-                <h1 className="text-3xl font-medium mb-4">{ article.title }</h1>
-                <div className="article-details-intro text-slate-400 text-sm mb-8">
-                    { article.created_at }
-                </div>
-                <div className="article-details-content" dangerouslySetInnerHTML={ { __html: article.content } }></div>
+                <h1 className="text-3xl font-medium mb-4">{article.title}</h1>
+                <div className="article-details-intro text-slate-400 text-sm mb-8">{article.created_at}</div>
+                <div className="article-details-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>
 
-                <ArticleCopyright id={article.id} path={article.article_path}/>
+                <ArticleCopyright id={article.id} path={article.article_path} />
             </div>
 
             <ArticleJsonLd
-                useAppDir={ true }
+                useAppDir={true}
                 type="Article"
                 url="https://schema.org/"
-                title={ article.title }
-                description={ article.description }
+                title={article.title}
+                description={article.description}
                 authorName="Bobby Liang"
-                images={ article.img_url }
+                images={article.img_url}
                 datePublished={article.created_at}
                 dateModified={article.updated_at}
             />
