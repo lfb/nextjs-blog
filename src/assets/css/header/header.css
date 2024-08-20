@@ -1,4 +1,4 @@
-@media (max-width: 767px) {
+@media (max-width: 650px) {
     .header-pc {
         display: none;
     }
@@ -7,7 +7,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 651px) {
     .header-pc {
         display: block;
     }

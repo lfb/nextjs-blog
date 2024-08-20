@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-function Search() {
+function Search({ isM }) {
     const [keyword, setKeyword] = useState('')
 
     const handleSearchInputChange = e => {
@@ -18,12 +18,12 @@ function Search() {
     }
 
     return (
-        <div className="relative search">
+        <div className={isM ? 'flex-1 ml-4' : ''}>
             <input
                 type="text"
                 required={true}
                 placeholder="搜索"
-                className="
+                className={`
                     search-input placeholder:text-xs placeholder:text-slate-400
                     focus:outline-none
                      text-sm
@@ -33,7 +33,9 @@ function Search() {
                      text-slate-800
                      rounded-full
                      px-4
-                     py-1.5"
+                     py-1.5
+                     ${isM ? 'w-full' : ''}
+                  `}
                 onChange={handleSearchInputChange}
                 onKeyDown={handleSearchKeyDown}
             />
