@@ -10,7 +10,7 @@
 */
 
 .hljs {
-    @apply p-4 rounded text-sm bg-slate-100;
+    @apply p-4 rounded text-sm bg-slate-100 overflow-x-auto;
 }
 
 .hljs-doctag,

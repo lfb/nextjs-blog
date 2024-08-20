@@ -3,10 +3,13 @@ import Link from 'next/link'
 import { isArray, getMonthDate } from '@/lib/utils'
 import { getArticleURL } from '@/lib/regular-url'
 
-export default function ArticleShelf({ articleList }) {
+export default function ArticleShelf({ keyword, articleList }) {
     return (
         <>
-            <div className="article-list text-3xl font-medium mb-8">文章</div>
+            <div className="article-list text-3xl font-medium flex items-center mb-8">
+                <span className="w-32">文章</span>
+                {keyword && <span className="text-slate-400">{keyword}</span>}
+            </div>
             {Object.keys(articleList).map(year => {
                 return (
                     <div className="article-item mb-8 flex" key={year}>

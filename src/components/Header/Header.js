@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import LogoImage from '@/assets/images/common/logo.png'
-import HeaderCss from '@/components/Header/Header.module.css'
+import LogoImage from '../../assets/images/common/logo.png'
+import Search from '@/components/Search/Search'
 
 import { getCategoryList } from '@/requests/api/category'
 import { isArray, isObject } from '@/lib/utils'
@@ -24,8 +24,8 @@ export default async function BlogHeader({ activeNav }) {
 
     return (
         <header className="blog-header pt-10 pb-16 flex items-center justify-between">
-            <Link href="/" title="波波博客 - www.boblog.com" className={`block ${HeaderCss['logo']}`}>
-                <Image className={HeaderCss['logo-image']} src={LogoImage} width={375} alt="波波博客 - www.boblog.com" />
+            <Link href="/" title="波波博客 - www.boblog.com" className="block w-40">
+                <Image className="w-full" src={LogoImage} width={646} alt="波波博客 - www.boblog.com" />
             </Link>
 
             <div className="flex items-center">
@@ -35,7 +35,7 @@ export default async function BlogHeader({ activeNav }) {
                 <Link href="/articles" className={getNavClass(NAV_ENUM.ARTICLES_PAGE, activeNav)}>
                     文章
                 </Link>
-                <div className="relative group text-base nav-links px-4 cursor-pointer">
+                <div className="relative group text-base nav-links cursor-pointer">
                     <span className={getNavClass(NAV_ENUM.CATEGORY_PAGE, activeNav)}>分类</span>
                     <div className="category-box hidden group-hover:block absolute top-full left-0 py-2">
                         <div className="w-0 relative left-6 h-0 border-l-8 border-r-8 border-b-8 border-transparent border-b-slate-100"></div>
@@ -55,11 +55,12 @@ export default async function BlogHeader({ activeNav }) {
                         </div>
                     </div>
                 </div>
-
                 <Link href="/about" className={`${getNavClass(NAV_ENUM.ABOUT_PAGE, activeNav)} pr-0`}>
                     关于
                 </Link>
             </div>
+
+            <Search />
         </header>
     )
 }
