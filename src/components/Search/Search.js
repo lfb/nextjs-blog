@@ -18,7 +18,7 @@ function Search() {
     }
 
     return (
-        <div className="relative search">
+        <div className="relative search w-full">
             <input
                 type="text"
                 required={true}

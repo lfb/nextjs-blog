@@ -1,0 +1,17 @@
+@media (max-width: 767px) {
+    .header-pc {
+        display: none;
+    }
+    .header-mobile {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-pc {
+        display: block;
+    }
+    .header-mobile {
+        display: none;
+    }
+}
