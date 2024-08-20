@@ -13,7 +13,7 @@ export const NAV_ENUM = {
  * @returns {string}
  */
 export function getNavClass(currentNav, activeNav) {
-    let classNames = 'nav-links px-2 hover:text-primary hover:font-bold'
+    let classNames = 'nav-links px-4 hover:text-primary hover:font-bold'
     if (currentNav === activeNav) {
         classNames += ' font-medium text-primary'
     }
