@@ -4,8 +4,7 @@ import MenuIcon from '@/components/Icon/MenuIcon'
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import LogoImage from '../../assets/images/common/logo.png'
-import { getNavClass, NAV_ENUM } from '../../lib/nav'
+import LogoImage from '@/assets/images/common/logo.png'
 
 export default function HeaderSidebar({ activeNav, categoryList }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -14,18 +13,18 @@ export default function HeaderSidebar({ activeNav, categoryList }) {
 
     return (
         <>
-            <div className="pl-4" onClick={onShow}>
+            <div className="pr-4" onClick={onShow}>
                 <MenuIcon />
             </div>
             <Drawer
+                key="HeaderSidebarDrawer"
+                width={'66.66%'}
+                placement="left"
                 autoFocus={false}
                 styles={{ body: { padding: '1.5rem' } }}
-                placement="left"
                 open={isOpen}
-                width={'60%'}
                 closable={false}
                 onClose={onClose}
-                key="left"
             >
                 <Link href="/" title="波波博客 - www.boblog.com" className="block w-36 mb-8">
                     <Image src={LogoImage} width="0" height="0" sizes="100vw" className="w-full h-auto" alt="波波博客 - www.boblog.com" />

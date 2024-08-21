@@ -20,13 +20,14 @@ function Search({ isM }) {
     return (
         <div className={isM ? 'flex-1 ml-4' : ''}>
             <input
-                type="text"
+                type="search"
                 required={true}
                 placeholder="搜索"
                 className={`
                     search-input placeholder:text-sm placeholder:text-slate-400
                     focus:outline-none
                     focus:border-primary
+                    focus:shadow
                      text-sm
                       border
                       border-slate-200

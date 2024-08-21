@@ -6,6 +6,13 @@ import { AntdRegistry } from '@ant-design/nextjs-registry'
 import Copyright from '@/components/Common/Copyright'
 import TopProgressBar from '@/components/Common/TopProgressBar'
 
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    minimumScale: 1,
+    userScalable: 'no'
+}
 export default function RootLayout({ children }) {
     return (
         <html lang="en">

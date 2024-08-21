@@ -18,7 +18,7 @@ export default async function SearchPage({ searchParams }) {
     }
     return (
         <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
-            <div className="pb-4 text-base">
+            <div className="pb-4 text-base text-slate-500">
                 「{keyword}」相关文章: {articleList.length} 篇
             </div>
             {isArray(articleList) && <ArticlesList keyword={keyword} articleList={articleList} />}

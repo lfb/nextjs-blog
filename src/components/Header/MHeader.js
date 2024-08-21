@@ -12,11 +12,11 @@ async function MHeader({ activeNav, categoryList }) {
         <>
             <header className="blog-header pt-4 pb-6">
                 <div className="flex items-center justify-between">
+                    <HeaderSidebar categoryList={categoryList} />
                     <Link href="/" title="波波博客 - www.boblog.com" className="block w-32">
                         <Image src={LogoImage} width="0" height="0" sizes="100vw" className="w-full h-auto" alt="波波博客 - www.boblog.com" />
                     </Link>
                     <Search isM={isM} />
-                    <HeaderSidebar categoryList={categoryList} />
                 </div>
             </header>
         </>

@@ -6,7 +6,7 @@ export default function ArticleCopyright({ article }) {
     return (
         <div className="my-4 text-xs leading-6 text-gray-400 rounded">
             <p>
-                版权声明：本文为博主
+                &copy;版权声明：本文为博主
                 <Link className="underline underline-offset-4" target={'_blank'} href={'https://github.com/lfb'}>
                     BobbyLiang
                 </Link>

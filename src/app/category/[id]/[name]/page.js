@@ -48,7 +48,7 @@ export default async function CategoryArticle({ params }) {
 
     return (
         <BaseLayout activeNav={NAV_ENUM.CATEGORY_PAGE}>
-            <div className="pb-4 text-base">
+            <div className="pb-4 text-base text-slate-500">
                 「{categoryName || name}」相关文章: {articleList.length} 篇
             </div>
             {isArray(articleList) && <ArticlesList articleList={articleList} />}
