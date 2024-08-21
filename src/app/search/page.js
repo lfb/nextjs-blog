@@ -5,7 +5,7 @@ import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 
 export default async function SearchPage({ searchParams }) {
-    let keyword = searchParams?.keyword || ''
+    let keyword = decodeURIComponent(searchParams?.keyword || '')
     let params = {
         keyword
     }
@@ -18,7 +18,10 @@ export default async function SearchPage({ searchParams }) {
     }
     return (
         <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
-            {isArray(articleList) ? <ArticlesList keyword={keyword} articleList={articleList} /> : <span className="py-8">无</span>}
+            <div className="pb-4 text-base">
+                「{keyword}」相关文章: {articleList.length} 篇
+            </div>
+            {isArray(articleList) && <ArticlesList keyword={keyword} articleList={articleList} />}
         </BaseLayout>
     )
 }
