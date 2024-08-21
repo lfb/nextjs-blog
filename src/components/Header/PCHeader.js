@@ -14,6 +14,9 @@ export default async function PCHeader({ activeNav, categoryList }) {
             </Link>
 
             <div className="flex items-center">
+                <Link href="/" className={getNavClass(NAV_ENUM.HOME_PAGE, activeNav)}>
+                    首页
+                </Link>
                 <Link href="/articles" className={getNavClass(NAV_ENUM.ARTICLES_PAGE, activeNav)}>
                     文章
                 </Link>

@@ -1,0 +1,8 @@
+@media (max-width: 650px) {
+    .article-year {
+        @apply hidden;
+    }
+    .article-shelf {
+        @apply hidden;
+    }
+}

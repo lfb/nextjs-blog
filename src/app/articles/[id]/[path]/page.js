@@ -6,6 +6,8 @@ import { isObject } from '@/lib/utils'
 import '@/assets/css/common/highlight.css'
 import '@/assets/css/articles/articles.css'
 import ArticleCopyright from '@/components/Articles/ArticleCopyright'
+import { getArticleURL } from '@/lib/regular-url'
+
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 
@@ -30,7 +32,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
         description: article.description,
         keywords: article.seo_keyword,
         alternates: {
-            canonical: `https://www.boblog.com/articles/${article.id}/${article.article_path}`
+            canonical: `https://www.boblog.com${getArticleURL(article)}`
         }
     }
 }
@@ -52,7 +54,7 @@ export default async function ArticlesDetails({ params, query, searchParams }) {
 
     return (
         <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
-            <div className="article-details overflow-hidden mb-8">
+            <div className="article-details overflow-hidden mb-8 px-4">
                 <h1 className="text-3xl font-medium mb-4">{article.title}</h1>
                 <div className="article-details-intro text-slate-400 text-sm mb-8">{article.created_at}</div>
                 <div className="article-details-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>

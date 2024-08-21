@@ -24,16 +24,18 @@ function Search({ isM }) {
                 required={true}
                 placeholder="搜索"
                 className={`
-                    search-input placeholder:text-xs placeholder:text-slate-400
+                    search-input placeholder:text-sm placeholder:text-slate-400
                     focus:outline-none
                      text-sm
-                     border
+                      border
+                      border-slate-200
                      outline-0
-                     border-slate-200
+                     
                      text-slate-800
                      rounded-full
                      px-4
                      py-1.5
+                     cursor-pointer
                      ${isM ? 'w-full' : ''}
                   `}
                 onChange={handleSearchInputChange}

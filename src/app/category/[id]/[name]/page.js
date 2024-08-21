@@ -46,7 +46,7 @@ export default async function CategoryArticle({ params }) {
 
     return (
         <BaseLayout activeNav={NAV_ENUM.CATEGORY_PAGE}>
-            <div className="category-article text-3xl mb-12 font-medium">{categoryName || name}</div>
+            <div className="category-article text-3xl mb-12 p-4 font-medium">{categoryName || name}</div>
 
             {isArray(articleList) ? <ArticlesList articleList={articleList} /> : <div>文章: 0</div>}
         </BaseLayout>

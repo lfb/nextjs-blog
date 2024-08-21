@@ -9,8 +9,8 @@ export default function About() {
     return (
         <>
             <BlogHeader activeNav={NAV_ENUM.ABOUT_PAGE} />
-            <div className="article-list text-3xl font-medium mb-8">关于</div>
-            <div className="about flex">
+            <div className="article-list text-3xl font-medium mb-8 px-4">关于</div>
+            <div className="about px-4 flex">
                 <div className="about-lef flex-1">
                     <p>你好！</p>
                     <p>我是 BOBO，也叫 Bobby，一名在二次元和代码世界中穿梭的程序员。</p>

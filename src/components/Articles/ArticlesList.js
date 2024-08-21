@@ -1,3 +1,6 @@
+'use client'
+import { useRouter } from 'next/navigation'
+
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -6,11 +9,17 @@ import { getArticleURL } from '@/lib/regular-url'
 import '@/assets/css/articles/list.css'
 
 export default function ArticlesList({ articleList }) {
+    const router = useRouter()
+
+    const onArticle = article => {
+        router.push(getArticleURL(article))
+    }
+
     return (
         <div>
             {articleList.map(article => {
                 return (
-                    <div key={article.id} className="article-list-item">
+                    <div key={article.id} className="article-list-item" onClick={() => onArticle(article)}>
                         <div className="article-list-content flex-1">
                             <h1>
                                 <Link href={getArticleURL(article)} title={article.title} className="article-list-title">

@@ -21,7 +21,7 @@ export default async function BlogHeader({ activeNav }) {
     }
 
     return (
-        <div>
+        <div className="px-4">
             <div className="header-pc">
                 <PCHeader categoryList={categoryList} activeNav={activeNav} />
             </div>
