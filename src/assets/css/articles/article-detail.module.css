@@ -1,0 +1,67 @@
+.box {
+    @apply overflow-hidden mb-8 px-4;
+}
+
+.title {
+    @apply text-3xl font-medium mb-4;
+}
+
+.date {
+    @apply text-slate-400 text-sm mb-8;
+}
+
+.content p {
+    line-height: 2em;
+    @apply my-4 text-base;
+}
+
+.content a {
+    @apply underline underline-offset-4 cursor-pointer hover:text-primary;
+}
+
+.content b,
+.content strong {
+    @apply font-medium;
+}
+
+.content ol,
+.content ul,
+.content menu {
+    @apply pl-8;
+}
+.content li {
+    list-style: disc;
+    @apply my-2;
+}
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    @apply my-6 font-medium;
+}
+
+.content h1 {
+    @apply text-3xl;
+}
+
+.content h2 {
+    @apply text-2xl;
+}
+
+.content h3 {
+    @apply text-xl;
+}
+
+.content h4 {
+    @apply text-lg;
+}
+
+.content h5 {
+    @apply text-base;
+}
+
+.content h6 {
+    @apply text-base;
+}

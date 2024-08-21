@@ -6,6 +6,8 @@ import { isArray, isObject } from '@/lib/utils'
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 
+import '@/assets/css/category/category.css'
+
 export async function generateMetadata({ params, searchParams }, parent) {
     const { id, name } = params || {}
 
@@ -46,7 +48,7 @@ export default async function CategoryArticle({ params }) {
 
     return (
         <BaseLayout activeNav={NAV_ENUM.CATEGORY_PAGE}>
-            <div className="category-article text-3xl mb-12 p-4 font-medium">{categoryName || name}</div>
+            <div className="category-article text-3xl mb-12 px-4 font-medium">{categoryName || name}</div>
 
             {isArray(articleList) ? <ArticlesList articleList={articleList} /> : <div>文章: 0</div>}
         </BaseLayout>

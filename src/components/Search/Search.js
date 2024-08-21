@@ -12,7 +12,7 @@ function Search({ isM }) {
         if (keyword && e.key === 'Enter') {
             setKeyword('')
             setTimeout(() => {
-                window.location.href = `/articles?keyword=${encodeURIComponent(keyword)}`
+                window.location.href = `/search?keyword=${encodeURIComponent(keyword)}`
             })
         }
     }
@@ -26,17 +26,17 @@ function Search({ isM }) {
                 className={`
                     search-input placeholder:text-sm placeholder:text-slate-400
                     focus:outline-none
+                    focus:border-primary
                      text-sm
                       border
                       border-slate-200
                      outline-0
-                     
                      text-slate-800
                      rounded-full
                      px-4
                      py-1.5
                      cursor-pointer
-                     ${isM ? 'w-full' : ''}
+                     ${isM ? 'w-full' : 'w-64'}
                   `}
                 onChange={handleSearchInputChange}
                 onKeyDown={handleSearchKeyDown}

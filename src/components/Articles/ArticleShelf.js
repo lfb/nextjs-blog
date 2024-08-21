@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { isArray, getMonthDate } from '@/lib/utils'
 import { getArticleURL } from '@/lib/regular-url'
-import '@/assets/css/articles/shelf.css'
+import '@/assets/css/articles/article-shelf.css'
 
 export default function ArticleShelf({ keyword, articleList }) {
     return (

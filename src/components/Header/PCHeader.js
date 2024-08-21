@@ -17,9 +17,6 @@ export default async function PCHeader({ activeNav, categoryList }) {
                 <Link href="/" className={getNavClass(NAV_ENUM.HOME_PAGE, activeNav)}>
                     首页
                 </Link>
-                <Link href="/articles" className={getNavClass(NAV_ENUM.ARTICLES_PAGE, activeNav)}>
-                    文章
-                </Link>
                 <div className="relative group text-base nav-links cursor-pointer">
                     <span className={getNavClass(NAV_ENUM.CATEGORY_PAGE, activeNav)}>分类</span>
                     <div className="category-box hidden group-hover:block absolute top-full left-0 py-2">

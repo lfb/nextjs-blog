@@ -4,7 +4,7 @@ import { getArticleDetails } from '@/requests/api/articles'
 import { isObject } from '@/lib/utils'
 
 import '@/assets/css/common/highlight.css'
-import '@/assets/css/articles/articles.css'
+import articleDetailStyles from '@/assets/css/articles/article-detail.module.css'
 import ArticleCopyright from '@/components/Articles/ArticleCopyright'
 import { getArticleURL } from '@/lib/regular-url'
 
@@ -54,12 +54,12 @@ export default async function ArticlesDetails({ params, query, searchParams }) {
 
     return (
         <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
-            <div className="article-details overflow-hidden mb-8 px-4">
-                <h1 className="text-3xl font-medium mb-4">{article.title}</h1>
-                <div className="article-details-intro text-slate-400 text-sm mb-8">{article.created_at}</div>
-                <div className="article-details-content" dangerouslySetInnerHTML={{ __html: article.content }}></div>
+            <div className={articleDetailStyles.box}>
+                <h1 className={articleDetailStyles.title}>{article.title}</h1>
+                <div className={articleDetailStyles.date}>{article.created_at}</div>
+                <div className={articleDetailStyles.content} dangerouslySetInnerHTML={{ __html: article.content }}></div>
 
-                <ArticleCopyright id={article.id} path={article.article_path} />
+                <ArticleCopyright article={article} />
             </div>
 
             <ArticleJsonLd

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 import '@/assets/css/about/about.css'
 import BlogHeader from '@/components/Header/Header'
@@ -23,9 +23,9 @@ export default function About() {
                     </p>
                     <p>我偏爱极简的风格，简单的生活，这也是这个网站设计干净、内容简洁的原因。希望我的分享能对你有所帮助！</p>
                 </div>
-                <div className="about-right ml-8">
-                    <Image src="/assets/banner.jpg" className="rounded" width={148} height={100} alt={'11'} />
-                </div>
+                {/*<div className="about-right ml-8">*/}
+                {/*<Image src="/assets/banner.jpg" className="rounded" width={148} height={100} alt={'11'} />*/}
+                {/*</div>*/}
             </div>
         </>
     )
