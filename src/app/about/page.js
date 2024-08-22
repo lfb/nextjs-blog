@@ -15,13 +15,14 @@ export default function About() {
                     <p>你好！</p>
                     <p>我是 BOBO，也叫 Bobby，一名在二次元和代码世界中穿梭的程序员。</p>
                     <p>
-                        我对这个网站非常喜爱，不仅因为它有意义深远的域名「BO + BLOG」：
+                        我非常喜爱这个网站，因为它一个非常帅气的域名：
                         <Link className="text-primary hover:underline" href={'https://boblog.com'}>
                             BoBlog.com
                         </Link>
                         ， 还有一个极具美感的 Logo。
                     </p>
-                    <p>我偏爱极简的风格，简单的生活，这也是这个网站设计干净、内容简洁的原因。希望我的分享能对你有所帮助！</p>
+                    <p>我喜欢极简的风格，简单的生活，这也是这个网站设计干净、内容简洁的原因。</p>
+                    <p>希望我的分享能对你有所帮助！</p>
                 </div>
                 {/*<div className="about-right ml-8">*/}
                 {/*<Image src="/assets/banner.jpg" className="rounded" width={148} height={100} alt={'11'} />*/}

@@ -1,8 +1,8 @@
 .item {
-    @apply flex p-4 mb-6 rounded cursor-pointer hover:bg-gray-100;
+    @apply flex p-4 mb-2 rounded cursor-pointer hover:bg-gray-100;
 }
 .title {
-    @apply font-medium text-2xl block hover:text-primary;
+    @apply font-medium text-xl block hover:text-primary;
 }
 .image {
     @apply ml-4 w-28;
@@ -10,7 +10,7 @@
 
 @media (max-width: 650px) {
     .item {
-        @apply flex mb-0;
+        @apply flex;
     }
     .title {
         @apply text-xl;

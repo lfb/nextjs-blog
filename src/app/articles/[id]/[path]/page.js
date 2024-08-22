@@ -1,16 +1,17 @@
 import { ArticleJsonLd } from 'next-seo'
 
 import { getArticleDetails } from '@/requests/api/articles'
-import { isObject } from '@/lib/utils'
+import { isObject, getDate } from '@/lib/utils'
 
 import '@/assets/css/common/highlight.css'
 import articleDetailStyles from '@/assets/css/articles/article-detail.module.css'
 import ArticleCopyright from '@/components/Articles/ArticleCopyright'
-import { getArticleURL } from '@/lib/regular-url'
+import { getArticleURL, getCategoryURL } from '@/lib/regular-url'
 
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
-
+import Link from 'next/link'
+import { Affix } from 'antd'
 export async function generateMetadata({ params, searchParams }, parent) {
     const { id, path } = params || {}
 
@@ -56,7 +57,14 @@ export default async function ArticlesDetails({ params, query, searchParams }) {
         <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
             <div className={articleDetailStyles.box}>
                 <h1 className={articleDetailStyles.title}>{article.title}</h1>
-                <div className={articleDetailStyles.date}>{article.created_at}</div>
+                <div className={articleDetailStyles.date}>
+                    <span className="mr-2">分类:</span>
+                    <Link href={getCategoryURL(article.category_info)} className="mr-4">
+                        {article.category_info.name}
+                    </Link>
+                    <span className="mr-2">发布:</span>
+                    <span>{article.created_at}</span>
+                </div>
                 <div className={articleDetailStyles.content} dangerouslySetInnerHTML={{ __html: article.content }}></div>
 
                 <ArticleCopyright article={article} />

@@ -31,6 +31,9 @@ export default function HeaderSidebar({ activeNav, categoryList }) {
                 </Link>
 
                 <div className="flex flex-col">
+                    <Link href="/articles" className="w-full text-base text-slate-800 py-2">
+                        文章列表
+                    </Link>
                     {categoryList.map(item => {
                         return (
                             <Link key={item.id} className="w-full text-base text-slate-800 py-2" title={item.name} href={item.jump_url}>

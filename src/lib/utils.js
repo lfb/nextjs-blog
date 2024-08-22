@@ -45,4 +45,25 @@ const getMonthDate = dateStr => {
     return `${month}-${date}`
 }
 
-export { isArray, isObject, getMonthDate }
+/**
+ * 转换一下日期
+ * @param dateStr
+ *
+ * @returns 年月-日
+ */
+const getDate = dateStr => {
+    // 转换为年月日，2023-02-10
+    const d = new Date(dateStr)
+
+    let year = d.getFullYear()
+
+    let month = d.getMonth() + 1
+    if (month < 10) {
+        month = `0${month}`
+    }
+    const date = d.getDate()
+
+    return `${year}-${month}-${date}`
+}
+
+export { isArray, isObject, getMonthDate, getDate }

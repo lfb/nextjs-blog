@@ -10,6 +10,10 @@
     @apply text-slate-400 text-sm mb-8;
 }
 
+.date a {
+    @apply underline underline-offset-4 cursor-pointer hover:text-primary;
+}
+
 .content p {
     line-height: 2em;
     @apply my-4 text-base;
