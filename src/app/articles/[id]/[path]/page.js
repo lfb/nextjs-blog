@@ -1,7 +1,7 @@
 import { ArticleJsonLd } from 'next-seo'
 
 import { getArticleDetails } from '@/requests/api/articles'
-import { isObject, getDate } from '@/lib/utils'
+import { isObject, getDate, isArray } from '@/lib/utils'
 
 import '@/assets/css/common/highlight.css'
 import articleDetailStyles from '@/assets/css/articles/article-detail.module.css'
@@ -11,6 +11,7 @@ import { getArticleURL, getCategoryURL } from '@/lib/regular-url'
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 import Link from 'next/link'
+import ArticleEmptyDetail from '@/components/Common/ArticleEmptyDetail'
 export async function generateMetadata({ params, searchParams }, parent) {
     const { id, path } = params || {}
 
@@ -28,11 +29,11 @@ export async function generateMetadata({ params, searchParams }, parent) {
     }
 
     return {
-        title: article.title,
-        description: article.description,
-        keywords: article.seo_keyword,
+        title: article?.title || '波波博客 - boblog.com',
+        description: article?.description || '前端工程师的技术与生活记录!',
+        keywords: article?.seo_keyword || '波波博客,前端开发,前端工程师,JavaScript,nodejs,boblog.com',
         alternates: {
-            canonical: `https://www.boblog.com${getArticleURL(article)}`
+            canonical: article ? `https://www.boblog.com${getArticleURL(article)}` : ''
         }
     }
 }
@@ -50,6 +51,14 @@ export default async function ArticlesDetails({ params, query, searchParams }) {
 
     if (!err && isObject(res)) {
         article = res.data
+    }
+
+    if (!isObject(article)) {
+        return (
+            <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
+                <ArticleEmptyDetail msg="oh~ 文章飞去太空啦~" />
+            </BaseLayout>
+        )
     }
 
     return (
