@@ -28,7 +28,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
     }
 
     return {
-        title: `${article.title} - boblog.com`,
+        title: article.title,
         description: article.description,
         keywords: article.seo_keyword,
         alternates: {
@@ -75,7 +75,10 @@ export default async function ArticlesDetails({ params, query, searchParams }) {
                 url="https://schema.org/"
                 title={article.title}
                 description={article.description}
-                authorName="Bobby Liang"
+                authorName={{
+                    name: 'BobbyLiang',
+                    url: 'https://github.com/lfb'
+                }}
                 images={article.img_url}
                 datePublished={article.created_at}
                 dateModified={article.updated_at}
