@@ -7,6 +7,7 @@ import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 
 import '@/assets/css/category/category.css'
+import ArticleEmptyList from '@/components/Common/ArticleEmptyList'
 
 export async function generateMetadata({ params, searchParams }, parent) {
     const { id, name } = params || {}
@@ -48,10 +49,15 @@ export default async function CategoryArticle({ params }) {
 
     return (
         <BaseLayout activeNav={NAV_ENUM.CATEGORY_PAGE}>
-            <div className="pb-4 text-base text-slate-500">
-                「{categoryName || name}」相关文章: {articleList.length} 篇
-            </div>
-            {isArray(articleList) && <ArticlesList articleList={articleList} />}
+            {!isArray(articleList) && <ArticleEmptyList />}
+            {isArray(articleList) && (
+                <>
+                    <div className="pb-4 text-base text-slate-500">
+                        「{categoryName || name}」相关文章: {articleList.length} 篇
+                    </div>
+                    <ArticlesList articleList={articleList} />
+                </>
+            )}
         </BaseLayout>
     )
 }

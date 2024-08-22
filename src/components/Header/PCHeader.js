@@ -13,7 +13,7 @@ export default async function PCHeader({ activeNav, categoryList }) {
                 <Image src={LogoImage} width="0" height="0" sizes="100vw" className="w-full h-auto" alt="波波博客 - www.boblog.com" />
             </Link>
 
-            <div className="flex items-center">
+            <div className="flex items-center px-4 whitespace-nowrap">
                 <Link href="/" className={getNavClass(NAV_ENUM.HOME_PAGE, activeNav)}>
                     首页
                 </Link>

@@ -3,6 +3,7 @@ import { getArticlesList } from '@/requests/api/articles'
 import { isObject } from '@/lib/utils'
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
+import ArticleEmptyList from '@/components/Common/ArticleEmptyList'
 
 export const metadata = {
     title: '波波博客-文章列表-boblog.com',
@@ -27,7 +28,7 @@ export default async function Articles({ searchParams }) {
 
     return (
         <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
-            {isObject(articleList) ? <ArticleShelf keyword={keyword} articleList={articleList} /> : <span className="py-8">无</span>}
+            {isObject(articleList) ? <ArticleShelf keyword={keyword} articleList={articleList} /> : <ArticleEmptyList />}
         </BaseLayout>
     )
 }

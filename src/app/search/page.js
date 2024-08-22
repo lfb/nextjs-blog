@@ -3,6 +3,7 @@ import { getArticlesList } from '@/requests/api/articles'
 import { isArray, isObject } from '@/lib/utils'
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
+import ArticleEmptyList from '@/components/Common/ArticleEmptyList'
 
 export const metadata = {
     title: '波波博客-搜索文章-boblog.com',
@@ -24,10 +25,15 @@ export default async function SearchPage({ searchParams }) {
     }
     return (
         <BaseLayout activeNav={NAV_ENUM.ARTICLES_PAGE}>
-            <div className="pb-4 text-base text-slate-500">
-                「{keyword}」相关文章: {articleList.length} 篇
-            </div>
-            {isArray(articleList) && <ArticlesList keyword={keyword} articleList={articleList} />}
+            {!isArray(articleList) && <ArticleEmptyList />}
+            {isArray(articleList) && (
+                <>
+                    <div className="pb-4 text-base text-slate-500">
+                        「{keyword}」相关文章: {articleList.length} 篇
+                    </div>
+                    <ArticlesList keyword={keyword} articleList={articleList} />
+                </>
+            )}
         </BaseLayout>
     )
 }
