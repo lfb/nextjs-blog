@@ -4,11 +4,12 @@ import { isArray, isObject } from '@/lib/utils'
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 import ArticleEmptyList from '@/components/Common/ArticleEmptyList'
+import { defaultMeta } from '@/lib/defaultMeta'
 
 export const metadata = {
     title: '波波博客-搜索文章-boblog.com',
-    description: '前端工程师的技术与生活记录！',
-    keywords: '波波博客,前端开发,前端工程师,JavaScript,nodejs,boblog.com'
+    description: defaultMeta.description,
+    keywords: defaultMeta.keywords
 }
 
 export default async function SearchPage({ searchParams }) {

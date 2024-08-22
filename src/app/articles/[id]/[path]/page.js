@@ -12,6 +12,8 @@ import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 import Link from 'next/link'
 import ArticleEmptyDetail from '@/components/Common/ArticleEmptyDetail'
+import { defaultMeta } from '@/lib/defaultMeta'
+
 export async function generateMetadata({ params, searchParams }, parent) {
     const { id, path } = params || {}
 
@@ -28,12 +30,16 @@ export async function generateMetadata({ params, searchParams }, parent) {
         article = res.data
     }
 
+    if (!isObject(article)) {
+        return defaultMeta
+    }
+
     return {
-        title: article?.title || '波波博客 - boblog.com',
-        description: article?.description || '前端工程师的技术与生活记录!',
-        keywords: article?.seo_keyword || '波波博客,前端开发,前端工程师,JavaScript,nodejs,boblog.com',
+        title: article.title,
+        description: article?.description,
+        keywords: article?.seo_keyword,
         alternates: {
-            canonical: article ? `https://www.boblog.com${getArticleURL(article)}` : ''
+            canonical: `https://www.boblog.com${getArticleURL(article)}`
         }
     }
 }

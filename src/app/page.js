@@ -6,12 +6,9 @@ import { getArticlesList } from '@/requests/api/articles'
 import { isArray, isObject } from '@/lib/utils'
 import { NAV_ENUM } from '@/lib/nav'
 import ArticlePagination from '@/components/Common/ArticlePagination'
+import { defaultMeta } from '@/lib/defaultMeta'
 
-export const metadata = {
-    title: '波波博客 - boblog.com',
-    description: '前端工程师的技术与生活记录！',
-    keywords: '波波博客,前端开发,前端工程师,JavaScript,nodejs,boblog.com'
-}
+export const metadata = defaultMeta
 
 export default async function Home({ searchParams }) {
     let articleList = []
