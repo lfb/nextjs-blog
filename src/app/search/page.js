@@ -4,6 +4,12 @@ import { isArray, isObject } from '@/lib/utils'
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 
+export const metadata = {
+    title: '波波博客-搜索文章-boblog.com',
+    description: '前端工程师的技术与生活记录！',
+    keywords: '波波博客,前端开发,前端工程师,JavaScript,nodejs,boblog.com'
+}
+
 export default async function SearchPage({ searchParams }) {
     let keyword = decodeURIComponent(searchParams?.keyword || '')
     let params = {

@@ -5,6 +5,12 @@ import '@/assets/css/about/about.css'
 import BlogHeader from '@/components/Header/Header'
 import { NAV_ENUM } from '@/lib/nav'
 
+export const metadata = {
+    title: '关于博客 - boblog.com',
+    description: '前端工程师的技术与生活记录！',
+    keywords: '波波博客,前端开发,前端工程师,JavaScript,nodejs,boblog.com'
+}
+
 export default function About() {
     return (
         <>

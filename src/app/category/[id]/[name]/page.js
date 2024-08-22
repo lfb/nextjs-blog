@@ -21,9 +21,9 @@ export async function generateMetadata({ params, searchParams }, parent) {
     }
 
     return {
-        title: category.name,
+        title: `${category.name} - boblog.com`,
         description: category.name,
-        keywords: category.name,
+        keywords: `波波博客,前端开发,前端工程师,${category.name}`,
         alternates: {
             canonical: `https://www.boblog.com/category/${category.id}/${category.category_key}`
         }

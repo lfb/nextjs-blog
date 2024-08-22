@@ -11,7 +11,6 @@ import { getArticleURL, getCategoryURL } from '@/lib/regular-url'
 import BaseLayout from '@/components/Common/BaseLayout'
 import { NAV_ENUM } from '@/lib/nav'
 import Link from 'next/link'
-import { Affix } from 'antd'
 export async function generateMetadata({ params, searchParams }, parent) {
     const { id, path } = params || {}
 
@@ -29,7 +28,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
     }
 
     return {
-        title: article.title,
+        title: `${article.title} - boblog.com`,
         description: article.description,
         keywords: article.seo_keyword,
         alternates: {

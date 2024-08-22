@@ -24,8 +24,8 @@ export default function ArticlesList({ articleList }) {
                                     {article.title}
                                 </Link>
                             </h1>
-                            <div className="text-slate-500 text-base py-2 leading-6">{article.description}</div>
-                            <div className="text-slate-500 text-sm line-clamp-2 leading-6">{article.created_at}</div>
+                            <div className="text-slate-500 text-sm my-2 leading-6">{article.description}</div>
+                            <div className="text-slate-500 text-sm leading-6">{article.created_at}</div>
                         </div>
                         <div className={articleListStyles.image}>
                             <Link href={getArticleURL(article)} title={article.title}>
@@ -34,9 +34,7 @@ export default function ArticlesList({ articleList }) {
                                     width="0"
                                     height="0"
                                     sizes="100vw"
-                                    className="w-28
-                                    h-auto
-                                     rounded"
+                                    className="w-28 h-auto rounded"
                                     title={article.title}
                                     alt={article.title}
                                 />
