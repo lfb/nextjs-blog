@@ -79,7 +79,7 @@ export default async function ArticlesDetails({ params, query, searchParams }) {
                     <span className="mr-2">发布:</span>
                     <span>{article.created_at}</span>
                 </div>
-                <div className={articleDetailStyles.content} dangerouslySetInnerHTML={{ __html: article.content }}></div>
+                <div className={articleDetailStyles.content} dangerouslySetInnerHTML={{ __html: article.content_html }}></div>
 
                 <ArticleCopyright article={article} />
             </div>
