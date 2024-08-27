@@ -5,7 +5,7 @@ axios.interceptors.request.use(
     config => {
         config.headers['Content-Type'] = config.headers['Content-Type'] || 'application/json;chartset=utf-8'
 
-        config.baseURL = 'http://localhost:5200/api'
+        config.baseURL = process.env.NEXT_PUBLIC_REQUEST_API
         config.timeout = 30 * 1000
 
         return config

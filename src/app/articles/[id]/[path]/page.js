@@ -39,12 +39,12 @@ export async function generateMetadata({ params, searchParams }, parent) {
         description: article?.description,
         keywords: article?.seo_keyword,
         alternates: {
-            canonical: `https://www.boblog.com${getArticleURL(article)}`
+            canonical: `${process.env.NEXT_PUBLIC_DOMAIN}${getArticleURL(article)}`
         }
     }
 }
 
-export default async function ArticlesDetails({ params, query, searchParams }) {
+export default async function ArticlesDetails({ params }) {
     const { id, path } = params || {}
 
     let article = {}

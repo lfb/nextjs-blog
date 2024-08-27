@@ -8,6 +8,7 @@ import { NAV_ENUM } from '@/lib/nav'
 
 import '@/assets/css/category/category.css'
 import ArticleEmptyList from '@/components/Common/ArticleEmptyList'
+import { getCategoryURL } from '@/lib/regular-url'
 
 export async function generateMetadata({ params, searchParams }, parent) {
     const { id, name } = params || {}
@@ -26,7 +27,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
         description: category.name,
         keywords: `波波博客,前端开发,前端工程师,${category.name}`,
         alternates: {
-            canonical: `https://www.boblog.com/category/${category.id}/${category.category_key}`
+            canonical: `${process.env.NEXT_PUBLIC_DOMAIN}${getCategoryURL(category)}`
         }
     }
 }
