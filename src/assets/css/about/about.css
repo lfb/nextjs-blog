@@ -1,3 +1,25 @@
-.about p {
+.about-content p {
     @apply my-4 text-base;
+}
+
+.about-content {
+    @apply px-4 flex;
+}
+.about-right {
+    @apply ml-8;
+}
+.about-image {
+    @apply rounded w-64 h-auto;
+}
+
+@media (max-width: 650px) {
+    .about-content {
+        @apply flex-col;
+    }
+    .about-right {
+        @apply ml-0;
+    }
+    .about-image {
+        @apply w-full;
+    }
 }
