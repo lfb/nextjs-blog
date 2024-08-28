@@ -5,35 +5,27 @@ import BaseLayout from '@/components/Common/BaseLayout'
 import { getArticlesList } from '@/requests/api/articles'
 import { isArray, isObject } from '@/lib/utils'
 import { NAV_ENUM } from '@/lib/nav'
-import ArticlePagination from '@/components/Common/ArticlePagination'
+import ArticleListObserver from '@/components/Articles/ArticleListObserver'
 import { defaultMeta } from '@/lib/defaultMeta'
 
 export const metadata = defaultMeta
 
 export default async function Home({ searchParams }) {
     let articleList = []
-    let totalPages = 1
-    let currentPage = searchParams?.page || 1
+    let isHasMore = false
 
-    let [err, res] = await getArticlesList({
-        params: { page: currentPage }
-    })
+    let [err, res] = await getArticlesList()
 
     if (!err && isObject(res)) {
         articleList = isArray(res.data.data) ? res.data.data : []
-
-        if (isObject(res.data.meta)) {
-            totalPages = res.data.meta.total_pages
-            currentPage = res.data.meta.current_page
-        }
+        isHasMore = isObject(res.data.meta) && res.data.meta.current_page < res.data.meta.total_pages
     }
-
-    // 监听滚动
 
     return (
         <BaseLayout activeNav={NAV_ENUM.HOME_PAGE}>
             <ArticlesList articleList={articleList} />
-            <ArticlePagination currentPage={currentPage} totalPages={totalPages} />
+
+            {isHasMore && <ArticleListObserver hasMore={isHasMore} />}
         </BaseLayout>
     )
 }

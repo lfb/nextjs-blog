@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getArticleURL } from '@/lib/regular-url'
+import process from 'next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss'
 
 export default function ArticleCopyright({ article }) {
     const articleUrl = `https://www.boblog.com${getArticleURL(article)}`
@@ -16,6 +17,12 @@ export default function ArticleCopyright({ article }) {
                 原文链接：
                 <Link title={article.title} target={'_blank'} href={articleUrl}>
                     {articleUrl}
+                </Link>
+            </p>
+            <p>
+                欢迎使用 GitHub Issues 进行评论：
+                <Link className="underline underline-offset-4" target={'_blank'} href={process.env.NEXT_PUBLIC_GITHUB_ISSUES}>
+                    点击评论
                 </Link>
             </p>
         </div>

@@ -14,7 +14,7 @@ export default function ArticlesList({ articleList }) {
     }
 
     return (
-        <div>
+        <>
             {articleList.map(article => {
                 return (
                     <div key={article.id} className={articleListStyles.item} onClick={() => onArticle(article)}>
@@ -43,6 +43,6 @@ export default function ArticlesList({ articleList }) {
                     </div>
                 )
             })}
-        </div>
+        </>
     )
 }
