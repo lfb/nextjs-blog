@@ -64,7 +64,7 @@ export default function ArticleListObserver(hasMore) {
         <>
             <ArticlesList articleList={articleList} />
             {isHasMore && <div ref={loadingRef} className="py-2"></div>}
-            {!isHasMore && <div ref={loadingRef} className="py-4 text-xs text-slate-400 text-center">已经到底了~</div>}
+            {!isHasMore && <div className="py-4 text-xs text-slate-400 text-center">已经到底了~</div>}
             {isLoading && <div className="py-4 text-xs text-slate-400 text-center">加载中...</div>}
         </>
     )
