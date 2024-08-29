@@ -89,6 +89,7 @@ function ArticleContents({ article }) {
                                 key={content.hash}
                                 className={activeHash === content.hash ? `${content.cls} text-primary` : `${content.cls} text-slate-600`}
                                 style={content.styles}
+                                title={`${article.title} - ${content.title}`}
                                 href={`#${content.hash}`}
                             >
                                 {content.title}
