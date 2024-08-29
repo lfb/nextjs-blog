@@ -66,4 +66,27 @@ const getDate = dateStr => {
     return `${year}-${month}-${date}`
 }
 
-export { isArray, isObject, getMonthDate, getDate }
+// 节流
+const throttle = (fn, delay) => {
+    let last = 0
+    let timer = null
+
+    return function () {
+        let context = this
+        let args = arguments
+        let now = +new Date()
+
+        if (now - last < delay) {
+            clearTimeout(timer)
+            timer = setTimeout(function () {
+                last = now
+                fn.apply(context, args)
+            }, delay)
+        } else {
+            last = now
+            fn.apply(context, args)
+        }
+    }
+}
+
+export { isArray, isObject, getMonthDate, getDate, throttle }

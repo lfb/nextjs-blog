@@ -13,6 +13,7 @@ import { NAV_ENUM } from '@/lib/nav'
 import Link from 'next/link'
 import ArticleEmptyDetail from '@/components/Common/ArticleEmptyDetail'
 import { defaultMeta } from '@/lib/defaultMeta'
+import ArticleContents from '@/components/Articles/ArticleContents'
 
 export async function generateMetadata({ params, searchParams }, parent) {
     const { id, path } = params || {}
@@ -79,9 +80,13 @@ export default async function ArticlesDetails({ params }) {
                     <span className="mr-2">发布:</span>
                     <span>{article.created_at}</span>
                 </div>
-                <div className={articleDetailStyles.content} dangerouslySetInnerHTML={{ __html: article.content_html }}></div>
+                <div
+                    className={`article-details-container ${articleDetailStyles.content}`}
+                    dangerouslySetInnerHTML={{ __html: article.content_html }}
+                ></div>
 
                 <ArticleCopyright article={article} />
+                <ArticleContents article={article} />
             </div>
 
             <ArticleJsonLd

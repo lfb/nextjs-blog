@@ -1,0 +1,3 @@
+.article-details-contents {
+    @apply fixed top-44 right-[calc((100vw-48rem)/2)] transform translate-x-full p-2 rounded flex flex-col overflow-y-auto  bg-slate-100;
+}
