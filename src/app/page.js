@@ -7,6 +7,7 @@ import { isArray, isObject } from '@/lib/utils'
 import { NAV_ENUM } from '@/lib/nav'
 import ArticleListObserver from '@/components/Articles/ArticleListObserver'
 import { defaultMeta } from '@/lib/defaultMeta'
+import ArticleEmptyList from '@/components/Common/ArticleEmptyList'
 
 export const metadata = defaultMeta
 
@@ -19,6 +20,10 @@ export default async function Home({ searchParams }) {
     if (!err && isObject(res)) {
         articleList = isArray(res.data.data) ? res.data.data : []
         isHasMore = isObject(res.data.meta) && res.data.meta.current_page < res.data.meta.total_pages
+    }
+
+    if (!isArray(articleList)) {
+        return <ArticleEmptyList />
     }
 
     return (
